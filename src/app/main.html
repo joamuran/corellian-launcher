@@ -1,0 +1,66 @@
+<html>
+<!--  http://www.webresourcesdepot.com/free-jquery-ui-themes-collection/ -->
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/main.css">
+	<!--link rel="stylesheet" href="lib/jquery-ui-1.11.2.custom/jquery-ui.css"-->
+
+	<!--script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script-->
+	<!--script type="text/javascript" src="lib/jquery-ui-1.11.2.custom/jquery-ui.js"></script-->
+	<!--script type="text/javascript" src="lib/typeahead.jquery.js"></script-->
+
+	<!--script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script-->
+
+	<script type="text/javascript" src="js/Config.js"></script>
+	<!--script type="text/javascript" src="js/WindowManager.js"></script-->
+	<script type="text/javascript" src="js/AppManager.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+
+<div id='wrapper'> <!-- igual millor eliminar el wrapper i deixar la finestra centrada, ja capturem el onblur... -->
+<!--div id='leftpanel'>
+	<div id='apps' target="AppsDiv" class="mainEntry">
+		<div class="mainEntryIcon"></div>
+		<div class="mainEntryText">Aplicacions</div>		
+	</div>
+	<div id='places' target="PlacesDiv" class="mainEntry">
+		<div class="mainEntryIcon"></div>
+		<div class="mainEntryText">Llocs</div>
+	</div>
+	<div id='config' target="ConfigDiv" class="mainEntry">
+		<div class="mainEntryIcon"></div>
+		<div class="mainEntryText">Configuració</div>
+	</div>
+	<div id='social' target="SocialDiv" class="mainEntry">
+		<div class="mainEntryIcon"></div>
+		<div class="mainEntryText">Social</div>
+	</div>
+	
+	<div id="sessionManager">
+		<div id="exitSession" class="sessionButton">Ix</div>
+		<div id="SessionShutdown" class="sessionButton">Apaga</div>
+		<div id="SessionBlock" class="sessionButton">Bloca</div>
+	</div>
+</div-->
+
+<div id='centralpanel'>
+	<div id="AppsDivContainer" class="SectionContainer">
+		<div id="AppsDivHeader">
+			<div id="Applications"><div class="breadCrumb">Aplicacions</div></div> <!-- http://red-team-design.com/css3-breadcrumbs/ -->
+			<div id="AppSearch"><input type="text" id="inputSearch" class="searchApp typeahead"></div>
+		</div>
+		<div id="AppsDiv"></div>
+	</div>
+
+	<div id="PlacesDivContainer" class="SectionContainer" style="display:none">Places </div>
+	<div id="ConfigDivContainer" class="SectionContainer" style="display:none">Config </div>
+	<div id="SocialDivContainer" class="SectionContainer" style="display:none">Social </div>
+</div>  <!--central panel -->
+
+</div>
+
+</body>
+</html>

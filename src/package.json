@@ -1,0 +1,25 @@
+{
+  "name": "corellian-launcher",
+  "version": "0.0.1",
+  "description": "Application Launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --enable-transparent-visuals --disable-gpu main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joamuran/corellian-launcher.git"
+  },
+  "keywords": [
+    "app",
+    "launcher"
+  ],
+  "author": "joamuran@gmail.com",
+  "license": "GPLv3",
+  "devDependencies": {
+    "electron-prebuilt": "^0.35.0",
+    "jquery":"^2.1",
+    "jquery-ui": "^1.10.4",
+    "xdg": "^0.1"
+  }
+}
