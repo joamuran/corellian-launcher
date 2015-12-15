@@ -20,6 +20,7 @@
     "electron-prebuilt": "^0.35.0",
     "jquery":"^2.1",
     "jquery-ui": "^1.10.4",
-    "xdg": "^0.1"
+    "xdg": "^0.1",
+    "rsvg":"^0.2.5"
   }
 }

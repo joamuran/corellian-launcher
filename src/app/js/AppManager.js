@@ -1,5 +1,6 @@
 xdg=require('xdg');
 fs= require ('fs');
+Rsvg = require('rsvg').Rsvg;
 child_process= require ('child_process');
 $ = jQuery = require('jquery');
 require('jquery-ui');
@@ -163,15 +164,35 @@ AppManager.prototype.createIcon=function createIcon(app){
 }
 
 AppManager.prototype.renderIcon=function renderIcon(icon){
-  // DEPRECATED!
+  
   
   // Provar la llibreria.. https://github.com/walling/node-rsvg
 
 // Mirar a vore què passa amb els programes que estan a ofimatica, que sembla que vulguen un argument i com no se passa casquen... (revisar eixos desktops)
 
   var iconimage=null; // Pot ser una imatge per defecte
+  
   if (icon.substr(icon.length-4)==".svg"){
-    //var iconimagesvg=$(document.createElement("svg")).attr("xmlns", "http://www.w3.org/2000/svg").attr("xmlns:xlink", "http://www.w3.org/1999/xlink");
+    // Create SVG render instance.
+	//var svg = new Rsvg();
+
+	/*// When finishing reading SVG, render and save as PNG image.
+	svg.on('finish', function() {  
+	var img_src=svg.render({
+	    format: 'png',
+	    width: 128,
+	    height: 128
+	  }).data;
+	*/
+	//iconimage=$(document.createElement("img")).attr("width", "64px").attr("height", "64px").attr("src", img_src);
+  	  iconimage=$(document.createElement("img")).attr("width", "64px").attr("height", "64px").attr("src", "");
+	//});
+
+	// Stream SVG file into render instance.
+	//fs.createReadStream(icon).pipe(svg);
+
+		
+	/*//var iconimagesvg=$(document.createElement("svg")).attr("xmlns", "http://www.w3.org/2000/svg").attr("xmlns:xlink", "http://www.w3.org/1999/xlink");
     //$(iconimagesvg).attr("width", "64px").attr("height", "64px");
     iconimage=$(document.createElement("div")).addClass("appicon");
     $(iconimage).load(icon,function(){
@@ -181,7 +202,7 @@ AppManager.prototype.renderIcon=function renderIcon(icon){
 	  // IGUAL VAL LA PENA RENDERITZAR LES ICONES ABANS... I AU...
 	  // OBTINDRE-LES COM A IMATGE, I SI ES UN SVG RENDERITZAR-LO EN EL .CONFIG
       $(this).find("svg").attr("width", "64px").attr("height", "64px").attr("xmlns", "http://www.w3.org/2000/svg").attr("xmlns:xlink", "http://www.w3.org/1999/xlink");
-    });
+    });*/
 
   } else {
     //iconimage=$(document.createElement("div")).addClass("appicon").css({"background-image":"url('"+icon+"') no-repeat"});
