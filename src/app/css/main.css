@@ -28,6 +28,11 @@ html{
 
 body{
   /*background-color:rgba(0,0,0,0.) !important;*/
+  /*
+   *Si utilitzem imatge de fons...
+   *
+   *background-image: url("/home/joamuran/backgrounds/102_nature_landscape_sea_sunset_orange_sea_sunset.jpg");
+  background-size: cover;*/
   font-family: "Roboto" !important;
   font-size: 0.9em;
   padding: 0px;
@@ -38,9 +43,10 @@ html{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding: 0px;
+    /*padding: 200px;/* Si fem imatge de fons i quadre centrat...   */
 	margin: 0px;
     -webkit-box-sizing: border-box;
+	
 }
 
 #wrapper{
@@ -70,6 +76,7 @@ html{
 #centralpanel{
 	width: auto;
 	height: 100%;
+	/*height: 80%;   Si utilitzem finestra */
 	min-width: 200px;
 	min-height: 100px;
 	color: #000000;

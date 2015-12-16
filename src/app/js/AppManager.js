@@ -1,6 +1,5 @@
 xdg=require('xdg');
 fs= require ('fs');
-Rsvg = require('rsvg').Rsvg;
 child_process= require ('child_process');
 $ = jQuery = require('jquery');
 require('jquery-ui');
@@ -156,7 +155,11 @@ AppManager.prototype.createIcon=function createIcon(app){
      var launch=$(icon).attr("launch");
      //require('nw.gui').Window.get().hide();
      //self.shown=false;
+	 
      child_process.exec(launch.replace("%u","").replace("%f", "").replace("%F","").replace("%U", ""));
+	 
+	 mainWindow.hide();
+     mainWindowShown=false;
     });
 
    return(icon);

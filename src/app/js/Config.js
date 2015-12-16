@@ -4,7 +4,7 @@ fs= require ('fs');
 function Config (){
   /* Keeps llx-launchpad config */
   var self=this;
-  this.configPath=xdg.basedir.configHome()+"/llx-launchpad";
+  this.configPath=xdg.basedir.configHome()+"/corellian-launcher";
 }
 
 

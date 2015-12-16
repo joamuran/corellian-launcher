@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xdotool key Control+Alt+m

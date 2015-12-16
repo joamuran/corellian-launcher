@@ -3,11 +3,12 @@ const electron = require('electron');
 const app = electron.app; 
 const BrowserWindow = electron.BrowserWindow;
 
+
 var globalShortcut = require('global-shortcut');
 
-let mainWindow;
-let winOptions;
-let mainWindowShown=true;
+var mainWindow;
+var winOptions;
+var mainWindowShown=true;
 
 app.on('window-all-closed', function() {
   globalShortcut.unregister('ctrl+alt+m');
@@ -23,6 +24,16 @@ app.on('ready', function() {
   
   // Create the browser window options and window
   var winOptions={
+    /*
+     *
+     *Si no volem fer la finestra transparent i posar una imatge de fons...
+     *
+     *
+    x: display.bounds.x,
+    y: display.bounds.y,
+    width: display.bounds.width,
+    height: display.bounds.height,*/
+    
     x: display.bounds.x+200,
     y: display.bounds.y+100,
     width: display.bounds.width-400,
@@ -56,6 +67,7 @@ app.on('ready', function() {
   
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+  
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
