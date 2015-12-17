@@ -1,0 +1,19 @@
+
+copiar launcher a /usr/bin
+instal·lar xdotool
+copiar corellian-launcher.dockitem a ~/.config/plank/dock1/launchers
+
+copiar corellian-launcher.desktop a /usr/share/applications
+
+
+- Instal·lar rsvg per a node:
+npm install rsvg
+
+generar el menu a ~/.config/corellian-launcher/menu i les icones corresponents amb l'script:
+
+python generate_menu.py Joc_Icones
+
+
+Ex: python generate_menu.py Numix-Circle
+
+

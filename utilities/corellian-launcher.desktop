@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Corellian Launcher
+Comment=A Simple App Launcher
+Type=Application
+Icon=distributor-logo
+Categories=Utility;
+TryExec=/usr/bin/launcher
+Exec=launcher
+
