@@ -142,8 +142,35 @@ html{
   /*background-color: #ffaaee;*/
   text-align: center;
   overflow: visible;
+}
 
 
+.bcContainer{
+	float: left;
+	width: 72px;
+	height: 72px;
+	margin: 10px;
+    text-align: center;
+    overflow: visible;
+}
+.bcName{
+  background: rgba(0,0,0,0);
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000000;
+  font-size: 0.9em;
+  clear: both;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.bcIcon{
+    margin: 5px;
+    /*background-size: 96px 96px !important;*/
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    
 }
 
 .app:hover{background: #ccccff;}
@@ -158,7 +185,7 @@ html{
   margin: 5px;
   /*background-color: #ffff00;*/
   /*margin-left: 10px;*/
-  background-size: 96px 96px !important;
+  
 
   /*background-color: #ff00ff !important;*/
   width: 96px;
@@ -188,31 +215,44 @@ html{
 	overflow-y: auto;
 }
 
+.emptyIcon {
+    display: block;
+    float: left;
+    clear: both;
+    height: 200px;
+    background-color: #ff0000;
+}
+
 #AppsDivHeader{
 	display:  block;
 	float: left;
 	clear: both;
 	width: 100%;
+    overflow: hidden;
 	box-shadow: 0px 1px 5px 1px rgba(150, 150, 150, 1);
 }
 
 #Applications{
 	display:  block;
 	position: relative;
-	height: 60px;
+	height: 92px;
 	width: 400px;
 	float: left;
 
-	padding: 20px;
+	padding: 0px 5px 5px 5px;
 }
 #AppSearch{
 	position: relative;
 	display:  block;
-	height: 60px;
-	width: 250px;
-	float: right;
+	height: 24px;
+	/*width: 250px;*/
+    font-size: 0.8em;
 
-	padding: 20px;
+	float: left;
+    width: 100%;
+    text-align: center;
+
+	padding: 10px;
 
 }
 
@@ -235,17 +275,16 @@ html{
 	cursor: pointer;
 }
 
-
-
 .searchApp{
     border: 1px solid #dadada;
-    border-radius: 7px;
+    border-radius: 10px;
 	background-color: rgba(100,100,100,0.5);
 	color: #ffffff;
 	text-shadow: 1px 1px 3px #000000;
-	font-size: 1.3em;
+	font-size: 0.9em;
 	padding-left: 30px;
-	height: 30px;
+	height: 20px;
+    width: 200px;
 	background-image: url(img/search.png);
 	background-repeat: no-repeat;
 }

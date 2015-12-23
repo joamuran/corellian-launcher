@@ -5,8 +5,6 @@ $ = jQuery = require('jquery');
 require('jquery-ui');
 require('./lib/typeahead.jquery.js');
 
-
-
 /*
 Interessant: http://code.tutsplus.com/tutorials/from-jquery-to-javascript-a-reference--net-23703
 http://stackoverflow.com/questions/4005211/beating-jquery-addiction-which-jquery-methods-are-easily-translated-into-pure-j
@@ -14,13 +12,70 @@ http://stackoverflow.com/questions/4005211/beating-jquery-addiction-which-jquery
 
 function AppManager (){
     this.strs = []; // Array for app search suggestions
+    this.breadCrumb=null;
 }
 
+
+AppManager.prototype.drawBreadcrumb=function drawBreadcrumb(current){
+    bcContainer=$(document.createElement("div")).addClass("bcContainer");
+    
+    
+  //if (typeof(deep)=="undefined") deep=0;
+  $("#Applications").empty();
+  icon=$(document.createElement("div")).addClass("bcIcon").css("background-image","url(css/img/corellian-launcher.png)");
+  desc=$(document.createElement("div")).addClass("bcName").html("Applications");
+  
+  $(bcContainer).append(icon).append(desc);
+  $("#Applications").append(bcContainer);
+  
+  /*  WIP HERE!!!! refent açò amb les icones!!! */
+  
+  
+
+  
+  /*
+  //console.log("***************************************");
+  console.log(current);
+  var self=this;
+  $("#Applications").empty();
+  //current_id=$(document.createElement("div")).html("CURRENT:"+current["id"]+" - "+current["name"]).addClass("breadCrumb");
+  current_id=$(document.createElement("div")).html(current["name"]).addClass("breadCrumb");
+  parent=$("#"+current["id"]+"Container");
+  //parent_id=$(document.createElement("div")).html("PARENT:"+$(parent).attr("parentid")+" - "+$(parent).attr("parentname")).addClass("breadCrumb").attr("target",$(parent).attr("parentid")).attr("targetname",$(parent).attr("parentname"));
+  parent_id=$(document.createElement("div")).html($(parent).attr("parentname")).addClass("breadCrumb").attr("target",$(parent).attr("parentid")).attr("targetname",$(parent).attr("parentname"));
+  if (typeof($(parent).attr("parentname"))!=="undefined" && $(parent).attr("parentname")!="none" ) {
+
+	$("#Applications").append(parent_id);
+  }
+  $("#Applications").append(current_id);
+
+  $(parent_id).bind("click", function(){
+    // Hide all categories
+    // Show parent category
+    targetid=$(this).attr("target");
+    targetname=$(this).attr("targetname");
+    if(targetid!==undefined && targetid!=="none") {
+      // getting parent properties
+      //console.log($("div#"+targetid));
+      parentid=$("div#"+targetid).attr("parentid");
+      parentname=$("div#"+targetid).attr("parentname");
+
+      $(".catDiv").hide();
+  	  $("#"+targetid+"Container").show();
+
+      self.drawBreadcrumb({"id":targetid, "name": targetname});
+    }
+
+  });
+*/
+}
+
+/*
 AppManager.prototype.drawBreadcrumb=function drawBreadcrumb(current){
   //if (typeof(deep)=="undefined") deep=0;
   
   //console.log("***************************************");
-  //console.log(current);
+  console.log(current);
   var self=this;
   $("#Applications").empty();
   //current_id=$(document.createElement("div")).html("CURRENT:"+current["id"]+" - "+current["name"]).addClass("breadCrumb");
@@ -54,7 +109,7 @@ AppManager.prototype.drawBreadcrumb=function drawBreadcrumb(current){
   });
 
 }
-
+*/
 AppManager.prototype.drawCategories=function drawCategories(categories){
   // Drawing categories into categories div (Applications)
 
@@ -132,6 +187,9 @@ AppManager.prototype.fillCategory=function fillCategory(items, cat, parentCatego
 	}
   }
   
+  
+  var nullicon=$(document.createElement("div")).addClass("emptyIcon");
+  newCatDiv.append(nullicon);
   return true;
 
 }
@@ -234,8 +292,8 @@ AppManager.prototype.createCategoryIcon=function createCategoryIcon(category, pa
    // TO-DO: Posar la descripció en un hover
 
    $(icon).bind("click", function(){
-
-  self.drawBreadcrumb({"id":category["id"], "name":category["name"]});
+    
+    self.drawBreadcrumb({"id":category["id"], "name":category["name"],"icon":category["icon"]});
 
      $(".catDiv").hide();
      $("#"+category["id"]+"Container").show();
@@ -322,7 +380,7 @@ AppManager.prototype.buildSearchArea = function buildSearchArea(){
            //$(".app").show();
 		   self.showElements('.app'); // Javascript selectors instead of jquery
 		   
-			self.drawBreadcrumb({"id":"ApplicationsRoot", "name":"Aplicacions"}, 0);
+			self.drawBreadcrumb({"id":"ApplicationsRoot", "name":"Aplicacions", "icon":null}, 0);
             
 			self.showElements('#ApplicationsRootContainer'); // Javascript selectors instead of jquery
 			//$("#ApplicationsRoot").show();
