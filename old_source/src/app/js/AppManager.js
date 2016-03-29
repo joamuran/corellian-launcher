@@ -12,25 +12,45 @@ http://stackoverflow.com/questions/4005211/beating-jquery-addiction-which-jquery
 
 function AppManager (){
     this.strs = []; // Array for app search suggestions
-    this.breadCrumb=null;
+    this.breadCrumbStack=[];
 }
 
+// this.breadCrumbStack=null;
 
 AppManager.prototype.drawBreadcrumb=function drawBreadcrumb(current){
-    bcContainer=$(document.createElement("div")).addClass("bcContainer");
-    
-    
-  //if (typeof(deep)=="undefined") deep=0;
-  $("#Applications").empty();
-  icon=$(document.createElement("div")).addClass("bcIcon").css("background-image","url(css/img/corellian-launcher.png)");
-  desc=$(document.createElement("div")).addClass("bcName").html("Applications");
-  
-  $(bcContainer).append(icon).append(desc);
-  $("#Applications").append(bcContainer);
-  
-  /*  WIP HERE!!!! refent açò amb les icones!!! */
-  
-  
+	var self=this;
+	
+	var indexitem=self.breadCrumbStack.length;
+	if (indexitem==0) $("#Applications").empty();
+	self.breadCrumbStack.push(current);
+
+	var bcContainer=$(document.createElement("div")).addClass("bcContainer").attr("id", "bc"+indexitem).attr("index", indexitem).attr("target", current["id"]+"Container");
+		
+	console.log(current["icon"]);
+	var icon=$(document.createElement("div")).addClass("bcIcon").css("background-image","url("+current["icon"]+")");
+	var desc=$(document.createElement("div")).addClass("bcName").html(current["name"]);
+	  
+  	$(bcContainer).append(icon).append(desc);
+	$("#Applications").append(bcContainer);
+	
+	$(bcContainer).bind("click", function(){
+		var target=$(this).attr("target");
+		var index=$(this).attr("index");
+		
+		$(".catDiv").hide();
+		$("#"+target).show();
+		
+		console.log(this);
+		for (i=parseInt(index)+1;i<=self.breadCrumbStack.length;i++) {
+			var item=$("#bc"+i);
+			self.breadCrumbStack.pop();
+			$(item).remove();
+			
+		}
+		
+	});
+		
+	 
 
   
   /*
@@ -118,7 +138,7 @@ AppManager.prototype.drawCategories=function drawCategories(categories){
 
 
   // Draw Header Breadcum
-  self.drawBreadcrumb({"id":"ApplicationsRoot", "name":"Aplicacions"}, 0);
+  self.drawBreadcrumb({"id":"ApplicationsRoot", "name":"Aplicacions", "icon":"css/img/corellian-launcher.png"}, 0);
 
   // Div for Applications Root
   AppsRootDiv=$(document.createElement("div")).addClass("catDiv").attr("id", "ApplicationsRootContainer").attr("parentid","none").attr("parentname", "none");
@@ -360,10 +380,11 @@ AppManager.prototype.buildSearchArea = function buildSearchArea(){
           textsearch=$(inputsearch).val();
 
           if (textsearch!="") {
-            // Mostrar totes les categories..
-            //$(".catDiv").show();
+            // If there is any text in text search, let's show all categories..
 			self.showElements('.catDiv'); // Javascript selectors instead of jquery
-            
+			// And hide blank space after categories
+			self.hideElements('.emptyIcon');
+			
 			//$(".app").hide();
 			self.hideElements('.app'); 
             
@@ -376,6 +397,9 @@ AppManager.prototype.buildSearchArea = function buildSearchArea(){
           } else{
             //$(".catDiv").hide();
 			self.hideElements('.catDiv'); // Javascript selectors instead of jquery
+			
+			// Show blank space after categories
+			self.showElements('.emptyIcon');
 			
            //$(".app").show();
 		   self.showElements('.app'); // Javascript selectors instead of jquery
