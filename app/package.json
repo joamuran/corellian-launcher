@@ -1,0 +1,26 @@
+{
+  "name": "llx-launchpad",
+  "main": "src/main.html",
+  "window": {
+    "show": false,
+    "title": "LliureX Launchpad",
+    "width": 1024,
+    "height": 768,
+    "show_in_taskbar": false,
+    "frame":true,
+    "toolbar":true
+    /*"always-on-top":true,*/
+    /*"visible-on-all-workspaces":true,*/
+    /*"show-in-taskbar": false,
+    "always-on-top":true,
+    "frame": false,
+    "toolbar":false,
+    "transparent": true,
+    "as-desktop":true,
+    "kiosk":true*/
+    },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "--ignore-certificate-errors --disable-setuid-sandbox --no-sandbox allow-no-sandbox-job"
+}
