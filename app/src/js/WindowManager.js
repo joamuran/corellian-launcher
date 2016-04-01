@@ -24,6 +24,8 @@ function WindowManager (){
   this.window.show();
   // Hide from taskbar
   child = exec('wmctrl -r "LliureX Launchpad" -b toggle,skip_taskbar', function (error, stdout, stderr) {});
+  
+  
 }
 
 var wm=new WindowManager ();
