@@ -8,6 +8,7 @@
     "height": 768,
     "show_in_taskbar": false,
     "frame":true,
+    "visible-on-all-workspaces":true,
     "toolbar":true
     /*"always-on-top":true,*/
     /*"visible-on-all-workspaces":true,*/
