@@ -1,0 +1,39 @@
+@font-face {
+    font-family: SanFranciscoBold;
+    src: url("fonts/System San Francisco Display Bold.ttf");
+}
+
+@font-face {
+    font-family: SanFrancisco;
+    src: url("fonts/System San Francisco Display Regular.ttf");
+}
+
+@font-face {
+    font-family: SanFranciscoThin;
+    src: url("fonts/System San Francisco Display Thin.ttf");
+}
+@font-face {
+    font-family: SanFranciscoLight;
+    src: url("fonts/System San Francisco Display Ultralight.ttf");
+}
+
+
+
+html{
+	font-family: "SanFranciscoThin" !important;
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+	color: #ffffff;
+	cursor: default;
+}
+
+h1{
+    margin-top: 50px;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 100;
+    text-align: center;
+}
