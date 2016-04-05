@@ -1,6 +1,7 @@
 xdg=require('xdg');
 fs= require ('fs');
 child_process= require ('child_process');
+//$ = jQuery = require('./lib/jquery-2.1.0.min.js');
 $ = jQuery = require('jquery');
 require('jquery-ui');
 require('./lib/typeahead.jquery.js');
@@ -181,7 +182,7 @@ AppManager.prototype.createIcon=function createIcon(app){
 			$("#BottomAppsDiv").stop(true,true).fadeIn();
 			$("#descAppDesc").html(app["comment"]);
 			$("#descAppName").html(app["name"]);
-			$("#descAppIcon").css("background-image","url("+app["icon"]+")");
+			$("#descAppIcon").css("background-image","url('file:///"+app["icon"]+"')");
 		}
     })
    $(icon).on("mouseleave", function(){
@@ -195,7 +196,12 @@ AppManager.prototype.createIcon=function createIcon(app){
      
 	 color='rgba('+0+','+0+','+0+','+0+')';
      $("body").css({"background-color":color});
-     console.log(ipcRenderer.sendSync('synchronous-message', 'hide')); // prints "pong"
+	 
+	 // WIP: We need to hide main window!!
+	 // Opcions: o intentar cridar al windowmanager,
+	 // o llançat una senyal al socket que escolta el wm
+	 
+     //console.log(ipcRenderer.sendSync('synchronous-message', 'hide')); // prints "pong"
 	 
      mainWindowShown=false;
 	 
@@ -252,7 +258,8 @@ AppManager.prototype.renderIcon=function renderIcon(icon){
   } else {
     //iconimage=$(document.createElement("div")).addClass("appicon").css({"background-image":"url('"+icon+"') no-repeat"});
 	//iconimage=$(document.createElement("img")).attr("width", "64px").attr("height", "64px").attr("src", icon);
-	iconimage=$(document.createElement("img")).addClass("appicon").attr("src", icon);
+	//console.log(icon);
+	iconimage=$(document.createElement("img")).addClass("appicon").attr("src", "file://"+icon);
   };
 
 
@@ -398,7 +405,7 @@ $('.typeahead').typeahead({
   limit: 1
 });
  
-	  
+
 	  
 	  
 }

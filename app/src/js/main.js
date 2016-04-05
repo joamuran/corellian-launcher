@@ -9,7 +9,7 @@ $(document).ready(function() {
       console.log("00000000000000000000");
       var categories=config.getApplicationsMenu();
       console.log("111111111111111111111");
-      //appManager.drawCategories(categories);
+      appManager.drawCategories(categories);
       console.log("22222222222222222222222");
       appManager.buildSearchArea();
       console.log("33333333333333333333333");

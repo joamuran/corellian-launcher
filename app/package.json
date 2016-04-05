@@ -16,5 +16,5 @@
   "webkit": {
     "plugin": true
   },
-  "chromium-args": "--ignore-certificate-errors --disable-setuid-sandbox --no-sandbox allow-no-sandbox-job"
+  "chromium-args": "--ignore-certificate-errors --disable-setuid-sandbox --no-sandbox --allow-no-sandbox-job --mixed-context"
 }

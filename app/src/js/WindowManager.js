@@ -22,7 +22,8 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
   
   window.addEventListener("load", function(){  // Will be replaced by "MenuReady"...
     item=document.querySelector("body");
-    item.addEventListener("click", function(){
+    //item.addEventListener("click", function(){
+    $(item).bind("click", function(){
       console.log("clic");
       self.appWindow.enterFullscreen();
       self.appWindow.hide();
@@ -34,6 +35,7 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
       console.log($("#main"));
       console.log("++++++++++++++++++++++++++++++++++++++++++");
       
+      $(item).unbind("click");
       self.MenuListener();
       callback(); // call to callback function when finishes listening
       

@@ -3,7 +3,8 @@
 #AppsDivContainer{
 	width: 100%;
 	height: 100%;
-	font-family: "RobotoLight";
+	/*font-family: "RobotoLight";*/
+	font-family: "SanFranciscoThin" !important;
 }
 
 
@@ -74,7 +75,8 @@
 .bcArrow{
   background: rgba(0,0,0,0);
   color: #ffffff;
-  font-family: "RobotoThin";
+  /*font-family: "RobotoThin";*/
+  font-family: "SanFranciscoThin" !important;
   font-size: 2.2em;
   float: left;
 }
@@ -91,7 +93,8 @@
   color: #ffffff;
   /*text-shadow: 1px 1px 3px #000000;
   font-size: 0.9em;*/
-  font-family: "RobotoThin";
+  /*font-family: "RobotoThin";*/
+  font-family: "SanFranciscoThin" !important;
   font-size: 2.2em;
   /**/
   /*clear: both;*/
@@ -238,11 +241,12 @@
 	color: #ffffff !important;
 	text-shadow: 1px 1px 3px #000000;
 	font-size: 1.5em;
-	font-family: "RobotoLight";
+	/*font-family: "RobotoLight";*/
+	font-family: "SanFranciscoThin" !important;
 	padding-left: 30px;
 	height: 32px;
     width: 300px;
-	background-image: url(img/search.png);
+	background-image: url('img/search.png');
 	background-position: left center;
 	background-repeat: no-repeat;
 }

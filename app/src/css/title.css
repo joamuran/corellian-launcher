@@ -17,8 +17,14 @@
     src: url("fonts/System San Francisco Display Ultralight.ttf");
 }
 
+#logo_test{
+	width: 128px;
+	height: 128px;
+	background-image: url('file:///usr/share/pixmaps/corellian-launcher.png');
+	background-repeat: no-repeat;
+}
 
-
+/*
 html{
 	font-family: "SanFranciscoThin" !important;
     background: rgba(0,0,0,0.8);
@@ -36,4 +42,4 @@ h1{
     font-size: 1.5em;
     font-weight: 100;
     text-align: center;
-}
+}*/
