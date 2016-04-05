@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Corellian Launcher
+Comment=A Simple App Launcher
+Type=Application
+Icon=/usr/share/pixmaps/corellian-launcher.png
+Categories=Utility;
+Exec=nodejs /srv/svn/github/corellian-launcher/app/cli.js
+Path=/srv/svn/github/corellian-launcher/app

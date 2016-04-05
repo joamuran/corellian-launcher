@@ -1,11 +1,17 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/title.css">
+        <link rel="stylesheet" href="css/AppManager.css">
+        
         <script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
         
         <!--script type="text/javascript" src="js/MainWindowManager.js"></script-->
+        <script type="text/javascript" src="js/Config.js"></script>
+        <script type="text/javascript" src="js/AppManager.js"></script>
         <script type="text/javascript" src="js/WindowManager.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        
+        <!--script type="text/javascript" src="js/PlacesManager.js"></script-->
     </head>
     <body>
         <div id="title">
@@ -13,7 +19,67 @@
         </div>
         
         <div id="main" style="display:none">
-            <h1>This is main win...</h1>
+            <h1>pajarito</h1>
+            <div id="leftpanel">                    
+                <div id='apps' target="AppsDiv" class="mainEntry">
+                <div class="mainEntryIcon EntrySelected" id="AppsIcon"></div>
+            </div>
+                
+            <div id='places' target="PlacesDiv" class="mainEntry">
+                <div class="mainEntryIcon" id="placesIcon"></div>
+            </div>
+            
+            <div id='config' target="ConfigDiv" class="mainEntry">
+                <div class="mainEntryIcon" id="settingsIcon"></div>
+            </div>
+            
+            <div id='social' target="SocialDiv" class="mainEntry">
+                <div class="mainEntryIcon" id="socialcons"></div>
+            </div>
+            
+            <div id="fillLeftPanel"></div>
+            
+            <!--div id="sessionManager">
+                <div id="exitSession" class="sessionButton">Ix</div>
+                <div id="SessionShutdown" class="sessionButton">Apaga</div>
+                <div id="SessionBlock" class="sessionButton">Bloca</div>
+            </div-->
+                   
+            </div> <!-- leftpanel -->
+                 
+            <div id='centralpanel'>
+                <div id="AppsDivContainer" class="SectionContainer">
+                <!--div id="AppsDivContainer" class="SectionContainer"-->
+                    <div id="AppsDivHeader">
+                        
+                        <div id="Applications">
+                            <div class="breadCrumb">Aplicacions</div>
+                        </div> <!-- http://red-team-design.com/css3-breadcrumbs/ -->
+                        <div id="AppSearch"><input type="text" id="inputSearch" class="searchApp typeahead"></div>
+                    </div>
+                    <div id="AppsDiv"></div>
+                    
+                    <div id="BottomAppsDiv">
+                    <div id="descAppIcon"></div>
+                    <div id="descApp"><div id="descAppName"></div><div id="descAppDesc"></div></div></div>
+                </div>
+    
+                
+                <div id="PlacesDivContainer" class="SectionContainer" >
+                    <div class="SectionName">Places</div>
+                    <div id="Places"></div>
+                    <div class="SectionName">Devices</div>
+                    <div id="Devices"></div>
+                    <div class="SectionName">Recent Files</div>
+                    <div id="Files"></div>
+                </div>
+                
+                <div id="ConfigDivContainer" class="SectionContainer" style="display:none"></div>
+                <div id="SocialDivContainer" class="SectionContainer" style="display:none"></div>
+            </div>  <!--central panel -->
+    
+        </div>         
+   
         </div>
     
     </body>

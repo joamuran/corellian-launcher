@@ -1,9 +1,8 @@
-var gui=require('nw.gui');
+var gui=nw; //var gui=require('nw.gui'); -> before 0.13 notation
 var exec = require('child_process').exec;     // To use wmctrl
 var net=require("net");                       // used for menu button communicate
 //var path = require('path');
 var process=require('process');
-
 
 
 function WindowManager (){
@@ -15,8 +14,12 @@ function WindowManager (){
   // Hide from taskbar
   child = exec('wmctrl -r "LliureX Launchpad Title" -b toggle,skip_taskbar', function (error, stdout, stderr) {});
   //self.titleWindow.showDevTools();
-  
+}
+
+WindowManager.prototype.generateMenu=function generateMenu(callback){
   // Wait for complete menu generation
+  var self=this;
+  
   window.addEventListener("load", function(){  // Will be replaced by "MenuReady"...
     item=document.querySelector("body");
     item.addEventListener("click", function(){
@@ -25,9 +28,14 @@ function WindowManager (){
       self.appWindow.hide();
       //item=document.querySelector("#title");
       $("#title").hide();
+      console.log("++++++++++++++++++++++++++++++++++++++++++");
+      console.log($("#title"));
       $("#main").show();
+      console.log($("#main"));
+      console.log("++++++++++++++++++++++++++++++++++++++++++");
       
       self.MenuListener();
+      callback(); // call to callback function when finishes listening
       
       //self.titleWindow.hide();
       //self.createMainWindow();

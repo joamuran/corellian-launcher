@@ -1,6 +1,7 @@
 {
   "name": "llx-launchpad",
   "main": "src/main.html",
+  "id":"corellian-launcher",
   "window": {
     "show": true,
     "title": "LliureX Launchpad Title",

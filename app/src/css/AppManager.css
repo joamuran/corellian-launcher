@@ -1,0 +1,388 @@
+
+
+#AppsDivContainer{
+	width: 100%;
+	height: 100%;
+	font-family: "RobotoLight";
+}
+
+
+
+.app{
+/*-webkit-filter: blur(0px) !important;*/
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	padding: 3px;
+  /*background-color: #ffaaee;*/
+  text-align: center;
+  overflow: visible;
+  font-size: 1em;
+  	
+}
+
+.app:hover{
+	/*background: #ccccff;*/
+	-webkit-filter: brightness(150%);
+	/*margin-top: -3px;*/
+	}
+
+
+
+.appicon{
+  margin: 5px;
+  width: 64px;
+  height: 64px;
+  -webkit-transition: height 0.2s ease, width 0.2s ease;
+  /*-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));*/
+  
+}
+
+.app:hover .appicon{
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
+	/*box-shadow: 0px 0px 20px rgba(255,255,255,0.8);*/
+	width: 70px;
+	height: 70px;
+
+
+}
+
+
+.applabel{
+  background: rgba(0,0,0,0);
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000000;
+  /*border-radius: 10px;*/
+}
+
+
+
+
+.bcContainer{
+	float: left;
+	/*width: 72px;*/
+	/*height: 72px;
+	/*margin: 10px;*/
+    text-align: center;
+    overflow: visible;
+	/*background: #00ff00;*/
+	position: relative;
+	z-index: 2;
+}
+
+.bcArrow{
+  background: rgba(0,0,0,0);
+  color: #ffffff;
+  font-family: "RobotoThin";
+  font-size: 2.2em;
+  float: left;
+}
+
+.bc{
+	border-bottom: 0px !important;
+}
+.bc:hover{
+	border-bottom: 0px !important;
+}
+
+.bcName{
+  background: rgba(0,0,0,0);
+  color: #ffffff;
+  /*text-shadow: 1px 1px 3px #000000;
+  font-size: 0.9em;*/
+  font-family: "RobotoThin";
+  font-size: 2.2em;
+  /**/
+  /*clear: both;*/
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.bcNameText:hover{
+	cursor: pointer;
+	/*text-decoration: underline;*/
+	border-bottom: 1px dashed #ffffff;
+	
+}
+
+.bcIcon{
+    margin: 5px;
+    /*background-size: 96px 96px !important;*/
+    /*width: 56px;
+    height: 56px;*/
+	width: 24px;
+    height: 24px;
+    background-size: contain;
+	z-index: 3;
+}
+.BreadCrumbDots{
+	position: absolute;
+	top: 33px;
+	left: -10px;
+	width: 40px;
+	height: 10px;
+	/*background: #ff0000;*/
+	float: left;
+	z-index: -1;
+	background: url(img/breadcrumbdot.png);
+	background-repeat: no-repeat;
+}
+/*.BreadCrumbDots{
+	position: absolute;
+	top: 30px;
+	left: -20px;
+	width: 40px;
+	height: 10px;
+	/*background: #ff0000;* /
+	float: left;
+	z-index: -1;
+	border:none;
+	border-top:4px dotted #f00;
+	border-style: dotted;
+	color:#fff;
+	background-color:#fff;
+	height:4px;
+	width:50%;
+}*/
+.bcDot{
+	position: relative;
+	width: 4px;
+	height: 4px;
+	margin-left: 5px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	float: left;
+	
+}
+
+
+#AppsDiv{
+	display: block;
+	width: 100%;
+	height: 100%;
+	float: left;
+	clear: both;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.emptyIcon {
+    display: block;
+    float: left;
+    clear: both;
+    height: 400px;
+    background-color: #ff0000;
+}
+
+#AppsDivHeader{
+	display:  block;
+	float: left;
+	clear: both;
+	width: 100%;
+    overflow: hidden;
+	margin: 20px 0px 0px 20px;
+	/*box-shadow: 0px 1px 5px 1px rgba(150, 150, 150, 1);*/
+}
+
+#Applications{
+	display:  inline;
+	position: relative;
+	/*height: 92px;*/
+	/*width: 400px;*/
+	width:40%;
+	float: left;
+
+	padding: 0px 5px 5px 5px;
+}
+#AppSearch{
+	position: relative;
+	display:  inline;
+	height: 24px;
+	/*width: 250px;*/
+    font-size: 0.8em;
+
+    /*width: 100%;*/
+	/*width: 40%;*/
+    /*text-align: center;*/
+	float: right;
+	margin-right: 30px;
+	padding: 10px;
+
+}
+
+.breadCrumb{
+  float: left;
+  display: block;
+  color: #ffffff !important;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px #000000;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f5f5f5 #e5e5e5 #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+  overflow: hidden;
+  padding: 4px;
+}
+.breadCrumb:hover{
+	cursor: pointer;
+}
+
+.searchApp{
+    border: 1px solid #dadada;
+    /*border-radius: 10px;*/
+	background-color: rgba(100,100,100,0.5);
+	color: #ffffff !important;
+	text-shadow: 1px 1px 3px #000000;
+	font-size: 1.5em;
+	font-family: "RobotoLight";
+	padding-left: 30px;
+	height: 32px;
+    width: 300px;
+	background-image: url(img/search.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.searchApp:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+
+}
+
+
+/* Session Management Buttons */
+#sessionManager{
+	position: absolute;
+	bottom: 0px;
+}
+
+.sessionButton{
+	float: left;
+	position: relative;
+}
+
+
+/* Tooltips */
+
+
+span.tooltip{
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	color:#fff;
+	background:rgba(51,51,51,0.75);
+	padding:20px;
+	border-radius:4px;
+	min-width:100px;
+	max-width: 250px;
+	width: 400px;
+	/*left: 20px;
+	/*top: 20px;*/
+	text-align:left;
+	position: relative;
+	z-index:10;
+	transition: visibility 0.1s, opacity 0.1s ease-out;
+}
+
+
+div.app:hover span{ /*display:block;*/
+	animation-delay: 2s;
+	transition: visibility 2s, opacity 0.5s ease-in;
+	opacity: 1;
+	visibility: visible;
+	}
+
+.tt-menu{
+	display: none !important;
+}
+
+
+/*a[mytitle]:hover:after {
+  content: attr(mytitle);
+  position: absolute;
+  display: block;
+}*/
+
+
+
+::-webkit-scrollbar {
+width: 12px;
+}
+
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px     rgba(0,0,0,0.3); 
+border-radius: 10px;
+height: :20px;
+}
+
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px     rgba(0,0,0,0.5); 
+height:20px;
+}
+
+
+/* Bittom div */
+#BottomAppsDiv{
+	/*background: #fff000;*/
+	background: rgba(0,0,0,0.8);
+	width: auto;
+	left:70px;
+	right: 70px;
+	height: 100px;
+	bottom: 30px;
+	float: left;
+	display: block;
+	position: fixed;
+	overflow-x: auto;
+	display: none;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+#descAppIcon{
+	width: 100px;
+	height: 100px;
+	margin-right: 10px;
+	float: left;
+	/*background: #ff0000;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+#descApp{
+	/*float: left;*/
+	overflow: hidden;
+	/*background: #f0f0f0;*/
+	/*display: inline-block;
+	width: 400px;*/
+}
+
+#descAppName{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: 20px;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-bottom: 1px dotted #ffffff;
+	/*background:#0000ff;*/ 
+}
+
+#descAppDesc{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	color: #ffffff;
+	font-size: 1.1em;
+	/*background:#00ff00;*/ 
+}
