@@ -1,23 +1,61 @@
 
-$(document).ready(function() {
-    
-  var wm=new WindowManager ();
-  var config=new Config();
-  var appManager=new AppManager();
-  wm.generateMenu(function(){
-    // Creating Apps Menu
-      console.log("00000000000000000000");
-      var categories=config.getApplicationsMenu();
-      console.log("111111111111111111111");
-      appManager.drawCategories(categories);
-      console.log("22222222222222222222222");
-      appManager.buildSearchArea();
-      console.log("33333333333333333333333");
-      //appManager.bindEvents();
-    
+
+CorellianCore=function(){
+  // Class constructor
+  this.wm=new WindowManager ();
+  this.config=new Config();
+  this.appManager=new AppManager();
+  this.placesManager=new PlacesManager();
+  this.disksManager=new DisksManager();
+}
+
+CorellianCore.prototype.init=function init(){
+  var self=this;
+  
+  // Creating Apps Menu
+  var categories=self.config.getApplicationsMenu();
+  self.appManager.drawCategories(categories);
+  self.appManager.buildSearchArea();
+      
+  // Creating Places Menu
+  var places=self.config.getPlaces();
+  self.config.getRecentFiles(function(response){
+      //console.log(response);
+        self.placesManager.drawRecent(response);
+      });
+        
+  self.placesManager.drawPlaces(places);
+        
+  // Adding Disks and partitions
+  self.disksManager.getDevices(function(disklist){
+    self.placesManager.drawDevices(disklist);
+   });  
+}
+
+CorellianCore.prototype.bindEventHandlers=function bindEventHandlers(){
+  /*$(".mainEntry").bind("mouseover", function(){*/
+  $(".mainEntry").bind("click", function(){
+        $(".SectionContainer").hide();
+        var target=$(this).attr("target");
+        console.log("Show: "+target);
+        $("#"+target+"Container").trigger("cleanContainer");
+        $("#"+target+"Container").show();
+        console.log($("#"+target+"Container"));
     });
+}
+
+$(document).ready(function() {
   
+  corellian=new CorellianCore();
+  corellian.wm.generateMenu(function(){
+    corellian.init();
+  })
   
+  corellian.bindEventHandlers();
+    
+  /*wm.generateMenu(function(){
+      
+    });*/
   
 })
 

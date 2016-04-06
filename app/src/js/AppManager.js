@@ -194,19 +194,16 @@ AppManager.prototype.createIcon=function createIcon(app){
    $(icon).bind("click", function(){
      var launch=$(icon).attr("launch");
      
-	 color='rgba('+0+','+0+','+0+','+0+')';
-     $("body").css({"background-color":color});
+	 //color='rgba('+0+','+0+','+0+','+0+')';
+     //$("body").css({"background-color":color});
 	 
-	 // WIP: We need to hide main window!!
-	 // Opcions: o intentar cridar al windowmanager,
-	 // o llançat una senyal al socket que escolta el wm
+	 corellian.wm.hideMe();
 	 
      //console.log(ipcRenderer.sendSync('synchronous-message', 'hide')); // prints "pong"
 	 
      mainWindowShown=false;
 	 
      child_process.exec(launch.replace("%u","").replace("%f", "").replace("%F","").replace("%U", ""));
-	 
 	 
     });
 

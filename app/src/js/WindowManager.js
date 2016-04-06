@@ -9,11 +9,18 @@ function WindowManager (){
   /* Constructor */
   var self=this;
   // Reference to Title Window
-  this.appWindow=gui.Window.get();
+  //this.appWindow=gui.Window.get();
+  this.appWindow=nw.Window.get();
   this.showAppWindow=false;
   // Hide from taskbar
   child = exec('wmctrl -r "LliureX Launchpad Title" -b toggle,skip_taskbar', function (error, stdout, stderr) {});
   //self.titleWindow.showDevTools();
+}
+
+WindowManager.prototype.hideMe=function hideMe(){
+  var self=this;
+  self.appWindow.hide();
+  self.showAppWindow=false;
 }
 
 WindowManager.prototype.generateMenu=function generateMenu(callback){
@@ -25,8 +32,33 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
     //item.addEventListener("click", function(){
     $(item).bind("click", function(){
       console.log("clic");
-      self.appWindow.enterFullscreen();
+      
       self.appWindow.hide();
+      
+      /*var x=window.screen.availWidth;
+      var y=window.screen.availHeight;*/
+      self.appWindow.x=150;
+      self.appWindow.y=150;
+      self.appWindow.width=window.screen.availWidth-300;
+      self.appWindow.height=window.screen.availHeight-300;
+      console.log(window.screen.availWidth);
+      console.log(window.screen.availHeight);
+      /*self.appWindow.height=800;
+      self.appWindow.width=1200;*/
+      /*self.appWindow.on("blur", function(){
+        alert("123");});*/
+      
+      // Hiding window when lose focus
+      self.appWindow.on("blur", function(){
+        self.hideMe();
+      });
+      
+      /*self.appWindow.width=x;
+      self.appWindow.height=y;
+      /*self.appWindow.enterFullscreen();*/
+      
+      
+      
       //item=document.querySelector("#title");
       $("#title").hide();
       console.log("++++++++++++++++++++++++++++++++++++++++++");
