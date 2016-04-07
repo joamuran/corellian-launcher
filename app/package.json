@@ -16,5 +16,14 @@
   "webkit": {
     "plugin": true
   },
-  "chromium-args": "--ignore-certificate-errors --disable-setuid-sandbox --no-sandbox --allow-no-sandbox-job --mixed-context"
+  "chromium-args": "--ignore-certificate-errors --disable-setuid-sandbox --no-sandbox --allow-no-sandbox-job --mixed-context",
+   "devDependencies": {
+    "jquery": "^2.1",
+    "jquery-ui": "^1.10.4",
+    "xdg": "^0.1",
+    "xdg-env": "^0.0.3",
+    "dbus-native": "^0.2.0",
+    "deep-diff": "^0.3.3"
+    }
+
 }
