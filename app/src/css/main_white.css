@@ -34,8 +34,11 @@ body{
   font-family: "SanFranciscoThin" !important;
   font-size: 0.9em;
   padding: 0px;
-  margin: 0px;
-  background: rgba(255,255,255,0.9);
+  /*margin: 0px;*/
+  margin: 0px 200px 0px 200px;
+  background: url(img/bg.jpg);
+  background-size: cover;
+  /*background: rgba(255,255,255,0.9);*/
   color: #000000;
 }
 

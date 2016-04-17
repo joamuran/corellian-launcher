@@ -37,10 +37,22 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
       
       /*var x=window.screen.availWidth;
       var y=window.screen.availHeight;*/
+      
+      
+      self.appWindow.x=window.screen.availLeft;
+      self.appWindow.y=window.screen.availTop;
+      self.appWindow.width=window.screen.availWidth;
+      self.appWindow.height=window.screen.availHeight;
+      //self.appWindow.width=window.screen.availWidth-window.screen.availLeft;
+      //self.appWindow.height=window.screen.availHeight-window.screen.availTop;
+      
+      /* TO CENTER WINDOW...
       self.appWindow.x=150;
       self.appWindow.y=150;
       self.appWindow.width=window.screen.availWidth-300;
-      self.appWindow.height=window.screen.availHeight-300;
+      self.appWindow.height=window.screen.availHeight-300;*/
+      
+      
       console.log(window.screen.availWidth);
       console.log(window.screen.availHeight);
       /*self.appWindow.height=800;

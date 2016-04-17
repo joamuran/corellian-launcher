@@ -11,7 +11,7 @@
     "frame":false,
     "visible-on-all-workspaces":true,
     "toolbar":false,
-    "transparent":true
+    "transparent":false
     },
   "webkit": {
     "plugin": true
