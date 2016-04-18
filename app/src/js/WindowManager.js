@@ -43,6 +43,16 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
       self.appWindow.y=window.screen.availTop;
       self.appWindow.width=window.screen.availWidth;
       self.appWindow.height=window.screen.availHeight;
+      
+
+      // Adjust UI size to screen resolution
+      // UI is designed for 1366x732, in function of this, we'll adjust scale factor.
+      console.log(window.screen.availHeight/732);
+      var scalefactor=window.screen.availHeight/732;
+      console.log("SF:"+ scalefactor);
+      if (scalefactor<0.9 || scalefactor >1.1) $('body').css('zoom', scalefactor);
+      
+      
       //self.appWindow.width=window.screen.availWidth-window.screen.availLeft;
       //self.appWindow.height=window.screen.availHeight-window.screen.availTop;
       

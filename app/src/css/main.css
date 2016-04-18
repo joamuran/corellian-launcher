@@ -30,13 +30,19 @@ html{
 }
 
 body{
+  
   /*font-family: "Roboto" !important;*/
   font-family: "SanFranciscoThin" !important;
   font-size: 0.9em;
   padding: 0px;
-  margin: 0px;
-  background: rgba(0,0,0,0.8);
+  /*margin: 0px;*/
+  margin: 0px 200px 0px 200px;
+  /* Remember, to convert img:   convert circle_on_blue.png    -blur 0x8         circle_on_blue_blur.png (dep. imagemagick)*/
+  background: url(img/bg.jpg); 
+  background-size: cover;
+  /*background: rgba(255,255,255,0.9);*/
   color: #ffffff;
+  
 }
 
 /* left menu properties */
@@ -64,6 +70,9 @@ body{
   box-shadow: 0 8px 6px -6px black, inset 0 0 15px #000000;*/
   display: block;
   position: relative;
+  
+  overflow-x: hidden;
+  
 }
 
 #fillLeftPanel{
@@ -146,6 +155,7 @@ body{
 	margin-bottom: 200px;
 	margin-left: 100px;
 	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 .SectionContainer{
