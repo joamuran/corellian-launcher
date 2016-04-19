@@ -4,7 +4,7 @@
 	width: 100%;
 	height: 100%;
 	/*font-family: "RobotoLight";*/
-	font-family: "SanFranciscoThin" !important;
+	font-family: "SanFrancisco" !important;
 	overflow: hidden;
 }
 
@@ -77,8 +77,8 @@
   background: rgba(0,0,0,0);
   color: #ffffff;
   /*font-family: "RobotoThin";*/
-  font-family: "SanFranciscoThin" !important;
-  font-size: 2.2em;
+  font-family: "SanFrancisco" !important;
+  font-size: 2em;
   float: left;
 }
 
@@ -95,8 +95,8 @@
   /*text-shadow: 1px 1px 3px #000000;
   font-size: 0.9em;*/
   /*font-family: "RobotoThin";*/
-  font-family: "SanFranciscoThin" !important;
-  font-size: 2.2em;
+  font-family: "SanFrancisco" !important;
+  font-size: 2em;
   /**/
   /*clear: both;*/
   float: left;
@@ -195,7 +195,7 @@
 	position: relative;
 	/*height: 92px;*/
 	/*width: 400px;*/
-	width:40%;
+	width:60%;
 	float: left;
 
 	padding: 0px 5px 5px 5px;
@@ -205,7 +205,7 @@
 	display:  inline;
 	height: 24px;
 	/*width: 250px;*/
-    font-size: 0.8em;
+    font-size: 0.9em;
 
     /*width: 100%;*/
 	/*width: 40%;*/
@@ -236,17 +236,19 @@
 }
 
 .searchApp{
-    border: 1px solid #dadada;
+    /*border: 1px solid #dadada;*/
+    border-top: 0px; border-left: 0px; border-right: 0px;
+    border-bottom: 1px solid #0000ff;
     /*border-radius: 10px;*/
-	background-color: rgba(100,100,100,0.5);
+	background-color: rgba(100,100,100,0.2);
 	color: #ffffff !important;
 	text-shadow: 1px 1px 3px #000000;
-	font-size: 1.5em;
+	font-size: 1em;
 	/*font-family: "RobotoLight";*/
-	font-family: "SanFranciscoThin" !important;
+	font-family: "SanFrancisco" !important;
 	padding-left: 30px;
 	height: 32px;
-    width: 300px;
+    width: 200px;
 	background-image: url('img/search.png');
 	background-position: left center;
 	background-repeat: no-repeat;
@@ -254,8 +256,11 @@
 
 .searchApp:focus {
     outline: none;
-    border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    /*border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;*/
+    border-top: 0px; border-left: 0px; border-right: 0px;
+    border-bottom: 2px solid #0000ff;
+
 
 }
 
