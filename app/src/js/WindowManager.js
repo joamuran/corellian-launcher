@@ -45,13 +45,25 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
       self.appWindow.height=window.screen.availHeight;
       
 
+      
       // Adjust UI size to screen resolution
-      // UI is designed for 1366x732 (panoramic...),  in function of this, we'll adjust scale factor.
-     // for 3:4, lets test with 1280x1024... (1000)
-      console.log(window.screen.availHeight/1000);
-      var scalefactor=window.screen.availHeight/1000;
-      console.log("SF:"+ scalefactor);
-      if (scalefactor<0.9 || scalefactor >1.1) $('body').css('zoom', scalefactor);
+     var aspect_ratio=window.screen.availWidth/window.screen.availHeight;
+     var scalefactor=1;
+     var correction=0.8;
+     if (aspect_ratio<1.25) {
+        // // for 3:4, lets test with 1280x1024... (1000)
+        console.log(window.screen.availHeight/1000);
+        scalefactor=window.screen.availHeight/1000;
+        console.log("SF:"+ scalefactor);
+        $(item).css("margin", "0px 150px 0px 150px");
+     } else{
+      // Panoramic tested: 1366x732
+        $(item).css("margin", "0px 250px 0px 250px");
+        console.log(window.screen.availHeight/732);
+        scalefactor=window.screen.availHeight/732;
+        console.log("SF:"+ scalefactor);
+     }
+     if (scalefactor<0.9 || scalefactor >1.1) $('body').css('zoom', scalefactor*correction);
       
       
       //self.appWindow.width=window.screen.availWidth-window.screen.availLeft;
