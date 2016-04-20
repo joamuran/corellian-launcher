@@ -50,12 +50,12 @@ WindowManager.prototype.generateMenu=function generateMenu(callback){
      var aspect_ratio=window.screen.availWidth/window.screen.availHeight;
      var scalefactor=1;
      var correction=0.8;
-     if (aspect_ratio<1.25) {
+     if (aspect_ratio<1.53) {
         // // for 3:4, lets test with 1280x1024... (1000)
         console.log(window.screen.availHeight/1000);
         scalefactor=window.screen.availHeight/1000;
         console.log("SF:"+ scalefactor);
-        $(item).css("margin", "0px 150px 0px 150px");
+        $(item).css("margin", "0px 100px 0px 100px");
      } else{
       // Panoramic tested: 1366x732
         $(item).css("margin", "0px 250px 0px 250px");
