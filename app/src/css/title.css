@@ -3,13 +3,14 @@
     src: url("fonts/System San Francisco Display Bold.ttf");
 }
 
-@font-face {
+/*@font-face {
     font-family: SanFrancisco;
     src: url("fonts/System San Francisco Display Regular.ttf");
-}
+}*/
 
 @font-face {
-    font-family: SanFranciscoThin;
+    /*font-family: SanFranciscoThin;*/
+	font-family: SanFrancisco;
     src: url("fonts/System San Francisco Display Thin.ttf");
 }
 @font-face {

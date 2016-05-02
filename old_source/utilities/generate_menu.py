@@ -133,7 +133,8 @@ if (len(sys.argv)!=2):
 else:
   iconTheme=sys.argv[1]
 
-m=parse("./corellian-system.menu");
+#m=parse("./corellian-system.menu");
+m=parse("/etc/xdg/menus/xfce-applications.menu");
 catmenu={"categories":[]}
 
 # Cleaning directory for icons:
