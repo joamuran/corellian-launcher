@@ -1,0 +1,13 @@
+paquets:
+
+python-xdg
+python-cairosvg XX?
+python-rsvg
+
+
+
+moduls node... (cal instal·lar npm...)
+
+rsvg XX?
+
+
