@@ -1,9 +1,10 @@
 import cairo
 import rsvg
 
-img = cairo.ImageSurface(cairo.FORMAT_ARGB32,128,128)
+img = cairo.ImageSurface(cairo.FORMAT_ARGB32,256,256)
 
 ctx = cairo.Context(img)
+ctx.scale(256,256)
 
 handle = rsvg.Handle("/usr/share/icons/Numix-Circle/scalable/apps/abrowser.svg")
 # or, for in memory SVG data:
