@@ -13,6 +13,10 @@ DisksManager.prototype.getDevices=function getDevices(parentCallback) { // podem
     '/org/freedesktop/UDisks',
     'org.freedesktop.UDisks', 
     function(err, ud) {
+        if (typeof(ud=="undefined")) {
+            console.log("ud is undefined... err: "+err);
+            return null;
+        }
         ud.on('DeviceAdded', function(deviceObjectPath) {
             self.enumDevices(ud, parentCallback);
             /*
@@ -43,8 +47,7 @@ DisksManager.prototype.getDevices=function getDevices(parentCallback) { // podem
         self.enumDevices(ud, parentCallback);
         var timer=setInterval(function(){
             self.enumDevices(ud, parentCallback);
-            }
-        , 1000);
+            }, 1000);
         
         
         }
@@ -59,7 +62,8 @@ DisksManager.prototype.enumDevices=function enumDevices(ud,parentCallback) {
         ud.EnumerateDevices( function (a, b, c){
                             
             arrayDevices=[];
-            for (index in b) {
+            for (var index in b) {
+              if(b.hasOwnProperty(index)) {
                 var item={};
                 self.udservice.getInterface(b[index], 'org.freedesktop.DBus.Properties', function(err, diskProperties) {
                     
@@ -72,7 +76,7 @@ DisksManager.prototype.enumDevices=function enumDevices(ud,parentCallback) {
                                     });
                     
                 }); // getInterface
-                
+            } // if   
             } // FOR
             
 
